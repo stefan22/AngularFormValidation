@@ -10,7 +10,7 @@
 <body>
 <div class="page">
   <section class="card register">
-  <form name="myform" ng-controller="FormController">
+  <form name="myform" ng-submit="submit()" ng-controller="FormController" novalidate>
 
     <div class="textintro">
       <h1>Form Validation - Angular</h1>
@@ -18,13 +18,36 @@
     </div>
 
     <fieldset>
-      <input type="text" name="firstname" placeholder="Enter First Name">
-      <input type="text" name="lastname" placeholder="Enter Last Name">
-      <input type="email" name="email" placeholder="Enter Email">
-      <input type="password" name="password" placeholder="Enter Password">
+
+      <input type="text" name="firstname" ng-model="user.firstname" ng-minlength="5" ng-maxlength="20" placeholder="Enter First Name" required>
+        <div class="error" ng-show="myform.firstname.$dirty && myform.firstname.$invalid">
+          You must enter your first name
+        </div>
+    
+      <input type="text" name="lastname" ng-model="user.lastname" ng-minlength="5" ng-maxlength="20" placeholder="Enter Last Name" required>
+        <div class="error" ng-show="myform.lastname.$dirty && myform.lastname.$invalid">
+          You must enter your last name
+        </div>
+    
+      <input type="email" name="email" ng-model="user.email" placeholder="Enter Email" required ng-pattern="rex">
+         <div class="error" ng-show="myform.email.$dirty && myform.email.$invalid">
+          You must enter a valid email
+        </div>
+    
+      <input type="password" name="password" ng-minlength="5" ng-maxlength="20" ng-model="user.password" placeholder="Enter Password" required>
+          <div class="error" ng-show="myform.password.$dirty && myform.password.$invalid">
+              You must enter a password
+          </div>
+    
     </fieldset>
 
-    <button type="submit" class="btn">Submit</button>
+    <button ng-disabled="myform.$invalid" class="btn">Submit</button>
+    
+
+
+    <br/><br/>
+    <p>{{user}}</p>
+    
   </form>
 </section>
 </div>
@@ -33,7 +56,16 @@
      var myApp = angular.module('myApp', []);
 
      myApp.controller('FormController', ['$scope', function($scope) {
-        alert('ok');
+
+        $scope.rex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+       
+
+
+        $scope.submit = function() {
+          console.log('you pressed submit');
+        };
+
+
      }]);
 
 
