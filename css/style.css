@@ -643,3 +643,36 @@ form.ng-invalid button.btn {
 form.ng-valid button.btn {
   background-color:#2D8BCF;
 }
+
+
+fieldset {
+  position: relative;
+}
+
+.greenarrow1 {
+  position: absolute;
+  top: 12px;
+  right: -50px;
+}
+
+.greenarrow2 {
+  position: absolute;
+  top: 70px;
+  right: -50px;
+}
+
+.greenarrow3 {
+  position: absolute;
+  top: 131px;
+  right: -50px;
+}
+
+.greenarrow4 {
+  position: absolute;
+  top: 190px;
+  right: -50px;
+}
+
+input.ng-valid {
+  border:1px solid green;
+}
