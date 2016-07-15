@@ -55,7 +55,19 @@
 
 
     <br/><br/>
-    <p>{{user}}</p>
+    
+
+    <div ng-show="myform.$valid && myform.submitted">
+    <h2>You Submitted this:</h2>
+    
+           <div>
+              <p>Firstname: {{user.firstname}}</p>
+              <p><b>Lastname: {{user.lastname}}</p>
+              <p>Email: {{user.email}}</p>
+              <p>Password: {{user.password}}</p>
+
+           </div>
+    </div>
     
   </form>
 </section>
@@ -66,12 +78,20 @@
 
      myApp.controller('FormController', ['$scope', function($scope) {
 
+        $scope.submitted = false;
+
         $scope.rex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
        
 
 
         $scope.submit = function() {
           console.log('you pressed submit');
+          $scope.myform.submitted = true;
+         
+
+
+
+
         };
 
 
