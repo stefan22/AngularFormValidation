@@ -21,22 +21,31 @@
 
       <input type="text" name="firstname" ng-model="user.firstname" ng-minlength="5" ng-maxlength="20" placeholder="Enter First Name" required>
         <div class="error" ng-show="myform.firstname.$dirty && myform.firstname.$invalid">
-          You must enter your first name
+          <span ng-show="myform.firstname.$error.required">You must enter your first name</span>
+          <span ng-show="myform.firstname.$error.minlength">It must be at least five characters</span>
+          <span ng-show="myform.firstname.$error.maxlength">It cannot be more than 20 characters length</span>
+         
         </div>
     
       <input type="text" name="lastname" ng-model="user.lastname" ng-minlength="5" ng-maxlength="20" placeholder="Enter Last Name" required>
         <div class="error" ng-show="myform.lastname.$dirty && myform.lastname.$invalid">
-          You must enter your last name
+          <span ng-show="myform.lastname.$error.required">You must enter your last name</span>
+          <span ng-show="myform.lastname.$error.minlength">It must be at least five characters</span>
+          <span ng-show="myform.lastname.$error.maxlength">It cannot be more than 20 characters length</span>
         </div>
     
       <input type="email" name="email" ng-model="user.email" placeholder="Enter Email" required ng-pattern="rex">
          <div class="error" ng-show="myform.email.$dirty && myform.email.$invalid">
-          You must enter a valid email
+          <span ng-show="myform.email.$error.required">You must enter a valid email</span>
+          <span ng-show="myform.email.$error.pattern">Not a valid email pattern</span>
+         
         </div>
     
       <input type="password" name="password" ng-minlength="5" ng-maxlength="20" ng-model="user.password" placeholder="Enter Password" required>
           <div class="error" ng-show="myform.password.$dirty && myform.password.$invalid">
-              You must enter a password
+              <span ng-show="myform.password.$error.required">You must enter a password</span>
+              <span ng-show="myform.password.$error.minlength">It must be at least five characters</span>
+              <span ng-show="myform.password.$error.maxlength">It cannot be more than 20 characters length</span>
           </div>
     
     </fieldset>
