@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
   <meta charset="UTF-8">
   <title>Angular Validation</title>
@@ -10,10 +10,10 @@
 <body>
 <div class="page">
   <section class="card register">
-  <form name="myform">
+  <form name="myform" ng-controller="FormController">
 
     <div class="textintro">
-      <h1>Form Validation</h1>
+      <h1>Form Validation - Angular</h1>
       <p>Please fill out the following form</p>
     </div>
 
@@ -28,5 +28,20 @@
   </form>
 </section>
 </div>
+<script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
+<script type="text/javascript">
+     var myApp = angular.module('myApp', []);
+
+     myApp.controller('FormController', ['$scope', function($scope) {
+        alert('ok');
+     }]);
+
+
+
+
+
+
+
+</script>
 </body>
 </html>
