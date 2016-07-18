@@ -649,6 +649,10 @@ fieldset {
   position: relative;
 }
 
+.input1, .input2, .input3, .input4 {
+  position: relative;
+}
+
 .greenarrow1 {
   position: absolute;
   top: 12px;
@@ -657,19 +661,19 @@ fieldset {
 
 .greenarrow2 {
   position: absolute;
-  top: 70px;
+  top: 12px;
   right: -50px;
 }
 
 .greenarrow3 {
   position: absolute;
-  top: 131px;
+  top: 10px;
   right: -50px;
 }
 
 .greenarrow4 {
   position: absolute;
-  top: 190px;
+  top: 11px;
   right: -50px;
 }
 
