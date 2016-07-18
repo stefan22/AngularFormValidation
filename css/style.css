@@ -623,6 +623,10 @@ form.ng-invalid {
   padding:5em;
 }
 
+input.ng-touched.ng-invalid {
+  border:1px solid red;
+}
+
 
 form.ng-valid {
   border:1px solid blue;
