@@ -82,7 +82,7 @@
     
 
     <div ng-show="myform.$valid && myform.submitted">
-    <h2>{{user.firstname}}, you've submitted this:</h2>
+    <h2>Welcome {{user.firstname}}, you've submitted this:</h2>
     
            <div>
               <p>Firstname: {{user.firstname}}</p>
@@ -97,36 +97,6 @@
 </section>
 </div>
 <script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
-<script type="text/javascript">
-     var myApp = angular.module('myApp', []);
-
-     myApp.controller('FormController', ['$scope', function($scope) {
-
-        $scope.submitted = false;
-
-        $scope.rex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-       
-
-
-        $scope.submit = function() {
-          console.log('you pressed submit');
-          $scope.myform.submitted = true;
-         
-
-
-
-
-        };
-
-
-     }]);
-
-
-
-
-
-
-
-</script>
+<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
